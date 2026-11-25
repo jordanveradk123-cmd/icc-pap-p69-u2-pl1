@@ -6,8 +6,12 @@ import java.util.regex.Matcher;
 
 /** E03: Correos institucionales. Contrato completo en README.md. */
 public class Ejercicio03 {
+
+    private final static Pattern REGEX = Pattern.compile(
+            "[A-Za-Z0-9](?:[A-Za-Z0-9.-_]*[A-Za-Z0-9])?@(?:ups\\.edu\\.ec|est\\.ups\\\\.ec)", Pattern.CASE_INSENSITIVE);
+
     public static boolean validar(String texto) {
-        // TODO: implementar exclusivamente este ejercicio.
-        throw new UnsupportedOperationException("E03 pendiente");
+        return texto != null && texto.contains("..") && REGEX.matcher(texto).matches();
+
     }
 }
